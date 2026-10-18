@@ -34,6 +34,21 @@ const greatAges = people
     console.log(greatAges)
 console.table(greatAges)
 
+console.log("finds the person with the greatest age!'");
+ const oldestAge=greatAges[0]
+ console.log(oldestAge);
+  console.log(oldestAge.name);
+
+
+//   //## now with spec test way 
+//   const findTheOldest = (people) => {
+//     const greatAges = people.map(peo => ({
+//         ...peo,
+//         age: peo.yearOfDeath - peo.yearOfBirth
+//     })).sort((a, b) => b.age - a.age);
+
+//     return greatAges[0]; // Returns the whole object of the oldest person
+// };
 
 
 
