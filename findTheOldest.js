@@ -24,32 +24,33 @@ console.log("finds the person with the greatest age!'");
 //     return ageLiveB-ageLiveA; // Swapped to b - a for longest-lived first!
 // })
 
-const greatAges = people
-    .map(peo => ({
-        ...peo,
-        age: peo.yearOfDeath-peo.yearOfBirth
-
-    })) //...peo copy all property from original array and then we add new obj age by calultion new column
-.sort((a,b)=>b.age-a.age)
-    console.log(greatAges)
-console.table(greatAges)
-
-console.log("finds the person with the greatest age!'");
- const oldestAge=greatAges[0]
- console.log(oldestAge);
-  console.log(oldestAge.name);
-
-
-//   //## now with spec test way 
-//   const findTheOldest = (people) => {
-//     const greatAges = people.map(peo => ({
+// const greatAges = people
+//     .map(peo => ({
 //         ...peo,
-//         age: peo.yearOfDeath - peo.yearOfBirth
-//     })).sort((a, b) => b.age - a.age);
+//         age: peo.yearOfDeath-peo.yearOfBirth
 
-//     return greatAges[0]; // Returns the whole object of the oldest person
-// };
+//     })) //...peo copy all property from original array and then we add new obj age by calultion new column
+// .sort((a,b)=>b.age-a.age)
+//     console.log(greatAges)
+// console.table(greatAges)
+
+// console.log("finds the person with the greatest age!'");
+//  const oldestAge=greatAges[0]
+//  console.log(oldestAge);
+//   console.log(oldestAge.name);
+
+
+  //## now with spec test way 
+  const findTheOldest = (people) => {
+    
+    const greatAges = people.map(peo => ({
+        ...peo,
+        age: peo.yearOfDeath - peo.yearOfBirth
+    })).sort((a, b) => b.age - a.age);
+
+    return greatAges[0]; // Returns the whole object of the oldest person
+};
 
 
 
-//module.exports=findTheOldest;
+module.exports=findTheOldest;
