@@ -40,17 +40,22 @@ console.log("finds the person with the greatest age!'");
 //   console.log(oldestAge.name);
 
 
-  //## now with spec test way 
-  const findTheOldest = (people) => {
-    
-    const greatAges = people.map(peo => ({
+//## now with spec test way 
+const findTheOldest = (people) => {
+    const currentYear = new Date().getFullYear();
+    const greatAges = people.map(peo => {
+        // If yearOfDeath is missing/undefined, use the currentYear instead!
+        const deathYear = peo.yearOfDeath || currentYear;
+
+        return{
         ...peo,
-        age: peo.yearOfDeath - peo.yearOfBirth
-    })).sort((a, b) => b.age - a.age);
+        age: deathYear - peo.yearOfBirth
+        };
+    }).sort((a, b) => b.age - a.age);
 
     return greatAges[0]; // Returns the whole object of the oldest person
 };
 
 
 
-module.exports=findTheOldest;
+module.exports = findTheOldest;
